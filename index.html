@@ -2,27 +2,25 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Meta tags for social media banners, these should be filled in appropriately as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
   <meta name="description" content="DESCRIPTION META TAG">
   <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
   <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
   <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <!-- Path to banner image, should be in the path listed below. Optimal dimensions are 1200X630-->
   <meta property="og:image" content="static/image/your_banner_image.png" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
-
   <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
   <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <!-- Path to banner image, should be in the path listed below. Optimal dimensions are 1200X600-->
   <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
   <meta name="twitter:card" content="summary_large_image">
   <!-- Keywords for your paper to be indexed by-->
   <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
 
   <title>NuAP-RCC</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
@@ -45,7 +43,6 @@
   <script src="static/js/index.js"></script>
 </head>
 <body>
-
 
   <section class="hero">
     <div class="hero-body">
@@ -145,7 +142,8 @@
 </section>
 <!-- End paper abstract -->
 
-<section class="hero is-small is-light">
+<!-- Dataset -->
+<section class="section">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">USM-RCC dataset</h2>
@@ -157,7 +155,8 @@
     </div>
   </section>
 
-<section class="hero is-small is-light">
+<!-- Visualization Results -->
+<section class="section">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Visualization Results</h2>
@@ -169,44 +168,174 @@
           <div id="results-carousel" class="carousel results-carousel">
             <div class="item">
                 <center>
-                <img src="static\images\fig_visualization.png" alt="Raindrop 1" class="center" style="width:800px"/>
+                <img src="static\images\fig_visualization.png" alt="visualization 1" class="center" style="width:800px"/>
                 </center>
             </div> 
             <div class="item">
               <center>
-              <img src="static\images\fig_visualization_2.png" alt="Raindrop 2" class="center" style="width:800px"/>
+              <img src="static\images\fig_visualization_2.png" alt="visualization 2" class="center" style="width:800px"/>
               </center>
             </div>
           </div>
-
-
         </div>
     </div>
   </section>
 
+  <!-- Ablation study -->
+  <section class="section">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Ablation study</h2>
+
+        <h2 style="font-size:100%">
+          We present the ablation study results to analyze the effectiveness of our hyperparameter settings, such as the number of epochs, the batch size, and the learning rate.
+
+          <!-- Epochs -->
+          <h3 class="title is-4"> <br> Epochs </h3>
+
+          <div class="columns is-centered">
+
+            <div class="column">
+              <div class="content">
+                <p>
+                  The training loss GANFE is converged around at 50 epochs.
+                </p>
+                <img src="static\images\loss_curve_stage1.png" alt="loss curve 1" class="center" style="height: 400px; object-fit: cover"/>                    
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="columns is-centered">
+                <div class="column content">
+                  <p>
+                    The training loss GNNFA is converged around at 100 epochs.
+                  </p>                    
+                  <img src="static\images\loss_curve_stage2.png" alt="loss curve 2" class="center" style="height: 400px; object-fit: cover"/>                    
+                </div>
+              </div>
+            </div>    
+          </div>
+
+          <!-- Batch size -->
+          <h3 class="title is-4"> <br> Batch size </h3>
+
+          <div class="columns is-centered">
+            <div class="column">
+              <div class="content">
+                <p>
+                  The table below presents qualitative results for different batch sizes on the USM-RCC dataset.
+                </p>
+          
+                <table class="table is-striped is-fullwidth">
+                  <thead>
+                    <tr>
+                      <th>Batch size</th>
+                      <th>Precision</th>
+                      <th>Recall</th>
+                      <th>F1</th>
+                      <th>Accuracy</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>8</td>
+                      <td> &plusmn; </td>
+                      <td> &plusmn; </td>
+                      <td> &plusmn; </td>
+                      <td> &plusmn; </td>
+                    </tr>
+                    <tr>
+                      <td>16</td>
+                      <td>0.8037 &plusmn; 0.0407</td>
+                      <td>0.7818 &plusmn; 0.0436</td>
+                      <td>0.7841 &plusmn; 0.0428</td>
+                      <td>0.8014 &plusmn; 0.0382</td>
+                    </tr>
+                    <tr>
+                      <td>32</td>
+                      <td> &plusmn; </td>
+                      <td> &plusmn; </td>
+                      <td> &plusmn; </td>
+                      <td> &plusmn; </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          
+
+          <h3 class="title is-4"> <br> Learning rate </h3>
+          <!-- Insert your table here -->
+          <div class="columns is-centered">
+            <div class="column">
+              <div class="content">
+                <p>
+                  The table below presents qualitative results for varying learning rates on the USM-RCC dataset.
+                </p>
+
+                <table class="table is-striped is-fullwidth">
+                  <thead>
+                    <tr>
+                      <th>Learning rate</th>
+                      <th>Precision</th>
+                      <th>Recall</th>
+                      <th>F1</th>
+                      <th>Accuracy</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1e-3</td>
+                      <td>0.8100 &plusmn; 0.0393</td>
+                      <td>0.7723 &plusmn; 0.0598</td>
+                      <td>0.7705 &plusmn; 0.0560</td>
+                      <td>0.7978 &plusmn; 0.0460</td>
+                    </tr>
+                    <tr>
+                      <td>1e-4</td>
+                      <td>0.8037 &plusmn; 0.0407</td>
+                      <td>0.7818 &plusmn; 0.0436</td>
+                      <td>0.7841 &plusmn; 0.0428</td>
+                      <td>0.8014 &plusmn; 0.0382</td>
+                    </tr>
+                    <tr>
+                      <td>1e-5</td>
+                      <td>0.7837 &plusmn; 0.0523</td>
+                      <td>0.7410 &plusmn; 0.0434</td>
+                      <td>0.7457 &plusmn; 0.0482</td>
+                      <td>0.7895 &plusmn; 0.0399</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+              
+        </h2>
+      </div>
+    </div>
+  </section>
+  
 <center>
   <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fchohj1111.github.io%2FNuAP-RCC%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
 </center>
 
-
-  <footer class="footer">
+<footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-
           <p>
             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            You are free to borrow the design of this website; we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
-
         </div>
       </div>
     </div>
   </div>
 </footer>
 
-
-  </body>
-  </html>
+</body>
+</html>
